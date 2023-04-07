@@ -1,0 +1,50 @@
+1. Spring을 쓰려면?
+- *.jar 또는 메이븐 또는 그래듈
+
+2.편집기
+Eclipse / STS (Sprint Tool Suite - 스프링 전용 이클립스)
+* STS3 => Spring/Spring Boot
+* STS4 => Spring Boot
+
+C:\Spring에 압축 파일을 푼다(설치 개념이 아니다)
+
+STS
+-한글 UTF-8(기존에는 euc-kr)  
+
+Spring Boot  - JSP 제공X
+		    - 타임리프 / 리액트 O
+
+
+
+*jar파일 다운받다가 끊켰을 경우
+1. STS 끄고
+2. .m2 삭제
+3. STS 킨다
+	=>자동으로 다시 다운로드!
+
+필요한 인스턴스를 스프링에서 미리 생성해 준다
+=> XML/어노테이션
+
+chapter01
+XML
+
+chapter01_SpringMaven
+어노테이션
+
+
+1. *.java를 컴파일
+2. 톰캣 서버를 껏다가 켜야 한다.
+=> 스프링 컨테이너가 생성을 해주겠다 => src/applicationContext.xml
+
+Test t = new Test();
+     객체(클래스의 주소를 가지고있다(클래스@16진수))
+=>스프링에서는 객체를 "빈"이라고 정의한다
+
+* bean 생성
+@Component
+@Bean
+@Service
+@Repository
+
+ArrayList<SungJukDTO2> list = new ArrayList<SungJukDTO2>(); //1:1관계
+List<SungJukDTO2> list = new ArrayList<SungJukDTO2>(); //다형성
