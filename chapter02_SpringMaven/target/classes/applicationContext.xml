@@ -11,9 +11,12 @@
 	<!-- sample02 -->
 	<context:component-scan base-package="sample02" />
 	
-	<!-- sample02 -->
+	<!-- sample03 -->
 	<context:component-scan base-package="sample03" />
 	
-	
 	<context:component-scan base-package="spring.conf" />
+	
+	<!-- sample04 -->
+	<context:component-scan base-package="sample04" />
+	<!-- <bean id="arrayList" class="java.util.ArrayList"></bean> -->
 </beans>

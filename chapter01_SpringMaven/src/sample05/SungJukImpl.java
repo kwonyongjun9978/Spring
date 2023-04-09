@@ -35,7 +35,6 @@ public class SungJukImpl implements SungJuk {
 	public void display() {
 		System.out.println("이름\t국어\t영어\t수학\t총점\t평균");
 		System.out.println(name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+tot+"\t"+String.format("%.3f", avg));
-
 	}
 
 }

@@ -10,13 +10,13 @@ public class HelloSpring {
 		//ApplicationContext context = new FileSystemXmlApplicationContext("src/applicationContext.xml");
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		MessageBean bean1 = (MessageBean) context.getBean("messageBean"); //부모 = 자식
+		MessageBean bean1 = (MessageBean) context.getBean("messageBean1"); //부모 = 자식
 		bean1.sayHello("Spring");
 		
-		MessageBean bean2 = context.getBean("messageBean", MessageBean.class); //부모 = 자식
+		MessageBean bean2 = context.getBean("messageBean1", MessageBean.class); //부모 = 자식
 		bean2.sayHello("Spring");
 		
-		MessageBean bean3 = (MessageBean) context.getBean("messageBean"); //부모 = 자식
+		MessageBean bean3 = (MessageBean) context.getBean("messageBean1"); //부모 = 자식
 		bean3.sayHello("Spring");
 	}
 
