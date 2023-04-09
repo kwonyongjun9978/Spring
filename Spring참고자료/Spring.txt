@@ -48,3 +48,6 @@ Test t = new Test();
 
 ArrayList<SungJukDTO2> list = new ArrayList<SungJukDTO2>(); //1:1관계
 List<SungJukDTO2> list = new ArrayList<SungJukDTO2>(); //다형성
+
+IO Stream
+1.byte단위
