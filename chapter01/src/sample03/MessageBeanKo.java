@@ -1,7 +1,7 @@
 package sample03;
 
 public class MessageBeanKo implements MessageBean {
-	private int num; //필드, 초기화
+	private int num; //필드, 초기화(int 초기화값 : 0)
 	
 	public MessageBeanKo() {
 		System.out.println("MessageBeanKo 기본 생성자");

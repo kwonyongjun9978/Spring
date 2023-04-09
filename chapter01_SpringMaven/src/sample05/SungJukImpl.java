@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import org.springframework.stereotype.Component;
 
-@Component("sungJuklmp")
+@Component
 public class SungJukImpl implements SungJuk {
 	Scanner scan = new Scanner(System.in);
 	private String name;

@@ -8,7 +8,7 @@ public class HelloSpring {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		SungJuk sungJuk = (SungJuk) context.getBean("sungJuklmp");
+		SungJuk sungJuk = (SungJuk) context.getBean("sungJukImpl");
 		sungJuk.calc();
 		sungJuk.display();
 		
