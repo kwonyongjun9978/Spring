@@ -25,12 +25,12 @@ public class HelloSpring {
 			num = scan.nextInt();
 			
 			if(num == 5) break;
-			else if(num == 1) sungJuk = (SungJuk) context.getBean("sungJukInput");
+			else if(num == 1) sungJuk = (SungJuk) context.getBean("sungJukInput"); //sungJuk = new SungJukInput(); 
 			else if(num == 2) sungJuk = (SungJuk) context.getBean("sungJukOutput");
 			else if(num == 3) sungJuk = (SungJuk) context.getBean("sungJukUpdate");
 			else if(num == 4) sungJuk = (SungJuk) context.getBean("sungJukDelete");
-			else {System.out.println("1~5번까지만 입력하세요");
-				  continue;}	
+			else System.out.println("1~5번까지만 입력하세요");
+				  	
 			
 			sungJuk.execute(); //호출
 			
