@@ -42,7 +42,15 @@
 		<property name="userDAO" ref="userDAOImpl"/>
    </bean>
    
-   <bean id="userDTO" class="user.bean.UserDTO"></bean>
+   	<bean id="userUpdateService" class="user.service.UserUpdateService">
+		<property name="userDAO" ref="userDAOImpl"/>
+	</bean>
+	
+	<bean id="userDeleteService" class="user.service.UserDeleteService">
+		<property name="userDAO" ref="userDAOImpl"/>
+	</bean>
+	
+    <bean id="userDTO" class="user.bean.UserDTO"></bean>
 	
 	<bean id="userDAOImpl" class="user.dao.UserDAOImpl">
 		<!-- <property name="jdbcTemplate" ref="jdbcTemplate" /> -->
@@ -56,13 +64,4 @@
 		<constructor-arg ref="dataSource" />
 	</bean> -->
 
-	<bean id="userUpdateService" class="user.service.UserUpdateService">
-		<property name="userDTO" ref="userDTO"/>
-		<property name="userDAO" ref="userDAOImpl"/>
-	</bean>
-	
-	<bean id="userDeleteService" class="user.service.UserDeleteService">
-		<property name="userDTO" ref="userDTO"/>
-		<property name="userDAO" ref="userDAOImpl"/>
-	</bean>
 </beans>

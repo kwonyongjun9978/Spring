@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
@@ -73,19 +74,26 @@ public class UserDAOImpl extends NamedParameterJdbcDaoSupport implements UserDAO
 		return getJdbcTemplate().query(sql, new BeanPropertyRowMapper<UserDTO>(UserDTO.class));
 	}
 	
+	@Override
+	public UserDTO getUser(String id) {
+		String sql = "select * from usertable where id=?";
+		try {
+		return getJdbcTemplate().queryForObject(sql, new BeanPropertyRowMapper<UserDTO>(UserDTO.class), id);
+		}catch(EmptyResultDataAccessException e) {
+			return null;
+		}
+	}																		
+	
     @Override
-    public void update(UserDTO userDTO) {
-       String sql = "update usertable set name = ?, pwd = ? where id = ?";
-       getJdbcTemplate().update(sql, userDTO.getName(), userDTO.getPwd());
+    public void update(Map<String, String> map) {
+       String sql = "update usertable set name = :name, pwd = :pwd where id = :id";
+       getNamedParameterJdbcTemplate().update(sql, map);
     }
 
 	@Override
-	public void delete(UserDTO userDTO) {
+	public void delete(String id) {
 		String sql = "delete from usertable where id = :id";
-		
-		Map<String, String> map = new HashMap<String, String>();
-	    map.put("id", userDTO.getId());
-	    getNamedParameterJdbcTemplate().update(sql, map);
+		getJdbcTemplate().update(sql, id);
 	}
 	
     
